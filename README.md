@@ -74,7 +74,7 @@ npx hardhat compile
 
 Deploy the `MyNFT` contract to the Polygon Amoy testnet.
 
-\`\````bash
+\`\`\`bash
 npx hardhat ignition deploy ignition/modules/MyNFT.ts --network amoy
 \`\`\`
 
