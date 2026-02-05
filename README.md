@@ -32,27 +32,27 @@ This project provides a comprehensive setup for deploying and interacting with a
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/771salameche/polygon-amoy-nft
 cd polygon-amoy-nft
-\`\`\`
+```
 
 ### 2. Install Dependencies
 
 Install all necessary Node.js dependencies, including Hardhat, OpenZeppelin contracts, and `dotenv`.
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Environment Configuration
 
 Create a `.env` file in the root of your project directory with the following content. **Replace the placeholder values with your actual credentials.**
 
-\`\`\`
+```
 PRIVATE_KEY=YOUR_PRIVATE_KEY_WITHOUT_0X_PREFIX
 POLYGONSCAN_API_KEY=YOUR_POLYGONSCAN_API_KEY
-\`\`\`
+```
 
 -   **`PRIVATE_KEY`**: This is the private key of your wallet from which you will deploy contracts and pay for gas fees.
     -   **SECURITY WARNING**: Never expose your private key. Keep it secret.
@@ -66,17 +66,17 @@ POLYGONSCAN_API_KEY=YOUR_POLYGONSCAN_API_KEY
 
 Compile the Solidity smart contracts. This command checks for syntax errors and generates contract artifacts.
 
-\`\`\`bash
+```bash
 npx hardhat compile
-\`\`\`
+```
 
 ### 2. Deploy Contract
 
 Deploy the `MyNFT` contract to the Polygon Amoy testnet.
 
-\`\`\`bash
+```bash
 npx hardhat ignition deploy ignition/modules/MyNFT.ts --network amoy
-\`\`\`
+```
 
 Follow the prompts in the terminal to confirm the deployment. Ensure you have testnet MATIC in your wallet for gas fees.
 
@@ -87,14 +87,14 @@ Once deployed, Hardhat will output the contract address. For instance: `0xFe6698
 
 After successful deployment, verify your contract's source code on Polygonscan. Replace `YOUR_CONTRACT_ADDRESS` with the actual address from your deployment.
 
-\`\`\`bash
+```bash
 npx hardhat verify --network amoy YOUR_CONTRACT_ADDRESS
-\`\`\`
+```
 
 **Example using the deployed address:**
-\`\`\`bash
+```bash
 npx hardhat verify --network amoy 0xFe6698496d2f2fA1e85954B1D075Dd563df18ec2
-\`\`\`
+```
 
 You can then view your verified contract on Polygonscan, e.g.:
 [https://amoy.polygonscan.com/address/0xFe6698496d2f2fA1e85954B1D075Dd563df18ec2#code](https://amoy.polygonscan.com/address/0xFe6698496d2f2fA1e85954B1D075Dd563df18ec2#code)
@@ -109,9 +109,9 @@ Use the provided script to mint a new NFT.
 
 2.  **Run the minting script**:
 
-\`\`\`bash
+```bash
 npx hardhat run scripts/mint-nft.ts --network amoy
-\`\`\`
+```
 
 This will execute the `safeMint` function on your `MyNFT` contract, creating a new NFT.
 
